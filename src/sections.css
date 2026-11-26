@@ -1,3 +1,20 @@
+/* ------------------------------------------------------- layout guards */
+
+/* keep anchored sections clear of the fixed nav */
+#top,
+.section {
+  scroll-margin-top: 4.75rem;
+}
+
+/* equal-height work cards in each grid row */
+.work__grid > [data-reveal] {
+  height: 100%;
+}
+
+.work-card {
+  height: 100%;
+}
+
 /* ------------------------------------------------------------------ skills */
 
 .skills {
@@ -511,66 +528,115 @@
   display: flex;
   align-items: center;
   gap: 0.9rem;
-  padding: 0.75rem 0.1rem;
+  padding: 0.8rem 0.1rem;
   border-bottom: 1px solid var(--line);
-  transition: padding-left 0.35s var(--ease), color 0.3s, border-color 0.3s;
+  transition: padding-left 0.35s var(--ease), background-color 0.3s;
+}
+
+.contact__line > .mono {
+  flex: none;
+  width: 3.4rem;
+}
+
+.contact__line > svg {
+  flex: none;
+  margin-left: auto;
+  color: var(--muted);
 }
 
 .contact__line:hover {
-  padding-left: 0.5rem;
-  color: var(--accent);
-  border-color: var(--line-strong);
+  padding-left: 0.4rem;
+  background: color-mix(in srgb, var(--panel) 45%, transparent);
+}
+
+.contact__main {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.7rem;
+  min-width: 0;
 }
 
 .contact__line .mono {
   color: var(--muted);
-  min-width: 3.6rem;
 }
 
 .contact__value {
   font-family: var(--font-mono);
   font-size: clamp(0.8rem, 1.8vw, 1rem);
   letter-spacing: 0.01em;
-  word-break: break-word;
+  color: var(--text);
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s, border-color 0.3s;
 }
 
-.contact__line svg {
-  margin-left: auto;
-  flex: none;
+.contact__value:hover {
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
-.contact__copies {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.1rem;
-}
-
-.contact__copy {
-  margin-top: 1.4rem;
+.contact__inline {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 0.9rem;
+  gap: 0.35rem;
+  padding: 0.3rem 0.6rem;
   border: 1px solid var(--line);
   border-radius: 999px;
   font-family: var(--font-mono);
-  font-size: 0.64rem;
+  font-size: 0.55rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
   transition: color 0.3s, border-color 0.3s, background-color 0.3s;
 }
 
-.contact__copy:hover {
+.contact__inline:hover {
   color: var(--text);
   border-color: var(--line-strong);
 }
 
-.contact__copy.is-done {
-  color: var(--accent-ink);
+.contact__inline.is-done {
   background: var(--accent);
   border-color: var(--accent);
+  color: var(--accent-ink);
+}
+
+.slot-tag {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px dashed var(--line-strong);
+  border-radius: 999px;
+  padding: 0.12rem 0.45rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .contact__line {
+    gap: 0.6rem;
+  }
+
+  .contact__line > .mono {
+    width: 3rem;
+    font-size: 0.58rem;
+  }
+
+  .contact__value {
+    font-size: 0.74rem;
+  }
+
+  .contact__line > svg {
+    display: none;
+  }
+
+  .contact__inline {
+    padding: 0.26rem 0.5rem;
+    font-size: 0.52rem;
+  }
 }
 
 .socials {
