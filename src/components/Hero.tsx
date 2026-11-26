@@ -105,15 +105,11 @@ export function Hero() {
             <div className="hero__card">
               <h4>Currently</h4>
               <ul>
-                <li>
-                  <span>building</span> <b>Sextant v2</b>
-                </li>
-                <li>
-                  <span>reading</span> <b>The Craftsman</b>
-                </li>
-                <li>
-                  <span>listening</span> <b>Yoshimura</b>
-                </li>
+                {site.now.map((item) => (
+                  <li key={item.label}>
+                    <span>{item.label}</span> <b>{item.value}</b>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

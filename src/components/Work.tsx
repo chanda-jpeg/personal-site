@@ -123,7 +123,7 @@ export function Work() {
               Things I built and <em>kept</em> building.
             </>
           }
-          lede="Four projects that survived the graveyard of side quests. Each card opens a short case study."
+          lede="Pulled from my GitHub with `npm run scrape`, so this list is always what I have actually shipped. Each card opens a short case study."
         />
 
         <div className="work__grid">
