@@ -3,6 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "author": "Chanda Persaud <chanda.persaud@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chanda-jpeg/personal-site.git"
+  },
+  "homepage": "https://chanda-jpeg.github.io/personal-site/",
   "scripts": {
     "dev": "vite --host 0.0.0.0 --port 3000 --strictPort",
     "build": "tsc --noEmit && vite build",

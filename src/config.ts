@@ -3,7 +3,7 @@
  *  Chanda Persaud — personal site content
  * ---------------------------------------------------------------------------
  *  TEMPLATE CHECKLIST (search for "TODO" to find every slot):
- *    1. EMAIL + PHONE — set the two constants below.
+ *    1. PHONE — replace the placeholder number below (email is already real).
  *    2. SOCIALS — add LinkedIn / X / Instagram / Dribbble to `site.socials`.
  *    3. Location, timezone, availability — in `site`.
  *    4. Bio, intro, headline — in `site` (currently template copy).
@@ -16,12 +16,20 @@
 
 import { githubProjects, githubStats } from './projects.generated'
 
-/* --- contact details: the only two things you must fill in --------------- */
+/* --- contact details ----------------------------------------------------- */
 
-// TODO: your email address
-const EMAIL = 'hello@example.com'
-// TODO: your phone number (555-01xx is a reserved fake range — replace it)
+// REAL: recovered from the author/committer email on this repository's commit
+// objects (github.com/chanda-jpeg/personal-site/commits → chanda.persaud@gmail.com).
+// Your GitHub profile does not publish an email, so change this if you would
+// rather not use that address.
+const EMAIL = 'chanda.persaud@gmail.com'
+
+// PLACEHOLDER — replace with your number. No phone number exists in your GitHub
+// profile, repositories or commit metadata, so this is deliberately non-dialable:
+// 555-01xx is the reserved fictional range. While PHONE_IS_PLACEHOLDER is true the
+// site shows a visible "placeholder" tag next to it and the README flags it.
 const PHONE = '+1 (555) 010-0000'
+const PHONE_IS_PLACEHOLDER = true
 const PHONE_HREF = PHONE.replace(/[^\d+]/g, '')
 
 export type Social = { label: string; handle: string; href: string }
@@ -48,6 +56,7 @@ export const site = {
   email: EMAIL,
   phone: PHONE,
   phoneHref: PHONE_HREF,
+  phoneIsPlaceholder: PHONE_IS_PLACEHOLDER,
   availability: 'Available for new work', // TODO: your real availability
   headline: ['Interfaces', 'with a pulse.'],
   intro:
