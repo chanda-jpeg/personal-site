@@ -47,6 +47,16 @@ export function CommandPalette({
         },
       },
       {
+        id: 'copy-phone',
+        label: 'Copy phone number',
+        hint: site.phone,
+        icon: '⧉',
+        keywords: 'call telephone number contact',
+        run: () => {
+          void navigator.clipboard?.writeText(site.phone)
+        },
+      },
+      {
         id: 'github-profile',
         label: `Open github.com/${site.github.username}`,
         hint: 'new tab',

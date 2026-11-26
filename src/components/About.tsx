@@ -47,10 +47,10 @@ export function About() {
           index="01 — About"
           title={
             <>
-              Design engineer, <em>occasional</em> hermit.
+              Hi, I'm <em>Chanda</em>.
             </>
           }
-          lede="Half design, half engineering, permanently suspicious of anything that only looks good in a screenshot."
+          lede="The short version: what I build, where I have been, and what I am looking for. The numbers below come from my GitHub profile."
         />
 
         <div className="about">

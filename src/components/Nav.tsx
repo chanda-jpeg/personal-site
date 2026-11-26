@@ -24,7 +24,7 @@ export function Nav({
           <span className="brand__mark">{site.initials}</span>
           <span>
             {site.name}
-            <span style={{ color: 'var(--muted)' }}> / design engineer</span>
+            <span style={{ color: 'var(--muted)' }}> / personal site</span>
           </span>
         </a>
 
