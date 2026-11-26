@@ -45,7 +45,7 @@ export function Nav({
             <span className="kbd__cap">⌘</span>
             <span className="kbd__cap">K</span>
           </button>
-          <a className="kbd" href="mailto:hello@example.com" style={{ paddingInline: '0.7rem' }}>
+          <a className="kbd" href={`mailto:${site.email}`} style={{ paddingInline: '0.7rem' }}>
             Say hi
           </a>
         </div>
