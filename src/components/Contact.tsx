@@ -41,37 +41,46 @@ export function Contact() {
 
             <Reveal i={3}>
               <div className="contact__lines">
-                <a className="contact__line" href={`mailto:${site.email}`}>
+                <div className="contact__line">
                   <span className="mono">Email</span>
-                  <span className="contact__value">{site.email}</span>
+                  <span className="contact__main">
+                    <a className="contact__value" href={`mailto:${site.email}`}>
+                      {site.email}
+                    </a>
+                  </span>
+                  <button
+                    className={`contact__inline${copied === 'email' ? ' is-done' : ''}`}
+                    onClick={() => copy('email')}
+                    aria-label="Copy email address"
+                  >
+                    {copied === 'email' ? <Check /> : <Copy />}
+                    <span>{copied === 'email' ? 'copied' : 'copy'}</span>
+                  </button>
                   <Arrow />
-                </a>
-                <a className="contact__line" href={`tel:${site.phoneHref}`}>
-                  <span className="mono">Phone</span>
-                  <span className="contact__value">{site.phone}</span>
-                  <Arrow />
-                </a>
-              </div>
-            </Reveal>
+                </div>
 
-            <Reveal i={4}>
-              <div className="contact__copies">
-                <button
-                  className={`contact__copy${copied === 'email' ? ' is-done' : ''}`}
-                  onClick={() => copy('email')}
-                  aria-live="polite"
-                >
-                  {copied === 'email' ? <Check /> : <Copy />}
-                  {copied === 'email' ? 'email copied' : 'copy email'}
-                </button>
-                <button
-                  className={`contact__copy${copied === 'phone' ? ' is-done' : ''}`}
-                  onClick={() => copy('phone')}
-                  aria-live="polite"
-                >
-                  {copied === 'phone' ? <Check /> : <Copy />}
-                  {copied === 'phone' ? 'number copied' : 'copy number'}
-                </button>
+                <div className="contact__line">
+                  <span className="mono">Phone</span>
+                  <span className="contact__main">
+                    <a className="contact__value" href={`tel:${site.phoneHref}`}>
+                      {site.phone}
+                    </a>
+                    {site.phoneIsPlaceholder ? (
+                      <span className="slot-tag" title="Placeholder — replace in src/config.ts">
+                        placeholder
+                      </span>
+                    ) : null}
+                  </span>
+                  <button
+                    className={`contact__inline${copied === 'phone' ? ' is-done' : ''}`}
+                    onClick={() => copy('phone')}
+                    aria-label="Copy phone number"
+                  >
+                    {copied === 'phone' ? <Check /> : <Copy />}
+                    <span>{copied === 'phone' ? 'copied' : 'copy'}</span>
+                  </button>
+                  <Arrow />
+                </div>
               </div>
             </Reveal>
           </div>
