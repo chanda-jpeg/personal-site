@@ -91,12 +91,12 @@ export function Contact() {
                   </span>
                 </a>
               ))}
-              <a className="socials__add" href="#palette">
+              <div className="socials__add">
                 <span className="socials__label" style={{ color: 'var(--muted)' }}>
                   More links
                 </span>
                 <span className="socials__handle">add in src/config.ts →</span>
-              </a>
+              </div>
             </div>
           </Reveal>
         </div>
